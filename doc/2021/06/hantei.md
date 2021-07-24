@@ -14,23 +14,23 @@
 
 手順
 
+[GitHub - yuuki76/ANIFFT: Auto FFT tool](https://github.com/yuuki76/anifft)←このコードに準拠します
+
 INPUT(1920x1080)を処理したい画像,OUTPUTを最終的に使う画像とします。 
 
-> convert INPUT -gravity North -background black -extent 1920x1920 -fft -delete 1 -evaluate log 1000000 -contrast-stretch 0 OUTPUT
+~~このワンライナーであに瓶に準拠しつつ、より単純なFHD/HD/SDの判定に向いた(主観)画像が生成されます。~~
 
-このワンライナーであに瓶に準拠しつつ、より単純なFHD/HD/SDの判定に向いた(主観)画像が生成されます。
+~~意味は順番に~~
 
-意味は順番に
+~~-gravity North -background black -extent 1920x1920 : 上にそろえて1920x1920にキャンパスを拡大、背景は黒~~
 
--gravity North -background black -extent 1920x1920 : 上にそろえて1920x1920にキャンパスを拡大、背景は黒
+~~-fft -delete 1 : DFTを実行。0は複素数の絶対値で1は位相(偏角)で、今使いたいのは絶対値のみなので偏角成分を破棄。~~
 
--fft -delete 1 : DFTを実行。0は複素数の絶対値で1は位相(偏角)で、今使いたいのは絶対値のみなので偏角成分を破棄。
+~~-contrast-stretch 0,-evaluate log 1000000 : DFTで得られた画像はそのままだと真っ黒なので、人間の感覚に合わせ対数スケールへ変換。同時にコントラストを最大化する。~~
 
--contrast-stretch 0,-evaluate log 1000000 : DFTで得られた画像はそのままだと真っ黒なので、人間の感覚に合わせ対数スケールへ変換。同時にコントラストを最大化する。
+~~ソース画像が1920x1080でない場合、-resizeを用いて拡大縮小を行う。(拡大時は基本Sinc,縮小時はLanzcos)~~
 
-ソース画像が1920x1080でない場合、-resizeを用いて拡大縮小を行う。(拡大時は基本Sinc,縮小時はLanzcos)
-
-ただし、この画像は微細な部分を潰すので、必要に応じて生データのジャギりや、コントラストを最大化する前のDFTを解析して総合的に判断します。
+~~ただし、この画像は微細な部分を潰すので、必要に応じて生データのジャギりや、コントラストを最大化する前のDFTを解析して総合的に判断します。~~
 
 フレームの選択に関しては、あに瓶さんのルールをお借りします。
 
