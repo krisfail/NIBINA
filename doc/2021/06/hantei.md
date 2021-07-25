@@ -14,7 +14,9 @@
 
 手順
 
-[GitHub - yuuki76/ANIFFT: Auto FFT tool](https://github.com/yuuki76/anifft)←このコードに準拠します
+従来のFFT式判定は[GitHub - yuuki76/ANIFFT: Auto FFT tool](https://www.blogger.com/blog/post/edit/7206288531672684145/5114257932708086161#)←このコードに準拠します
+
+[GitHub - Infiziert90/getnative: Find the native resolution(s) of upscaled material (mostly anime)](https://github.com/Infiziert90/getnative)を利用した自動判定をメインに行っていきます
 
 INPUT(1920x1080)を処理したい画像,OUTPUTを最終的に使う画像とします。 
 
